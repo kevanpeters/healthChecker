@@ -25,7 +25,7 @@
 
 
 
-### Setup with Docker-compose full ap
+### Setup with Docker-compose full example
 
 Running the following command will run docker-compose up in the background. This will build the docker images in the API and HealthChecker folders along with pull an nginx image to run as a front end.
 
