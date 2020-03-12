@@ -16,4 +16,4 @@ services:
       - 4000:4000
   healthchecker:
     build: ./healthChecker/.
-    command: python healthChecker.py http://nginx:4000/api/time -i 5
+    command: python healthChecker.py http://nginx:4000/api/time -i 6
