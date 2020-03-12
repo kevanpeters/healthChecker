@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: healthChecker
 
 HEALTH_ID = $(shell docker ps -q --filter="NAME=healthchecker_healthchecker")
 NGINX_ID = $(shell docker ps -q --filter="NAME=healthchecker_nginx")
@@ -13,7 +13,7 @@ down:
 	@docker-compose down
 
 healthChecker:
-	python3 healthChecker.py http://localhost:4000/api/time -i 2
+	 docker run -it $(shell docker build -q ./healthChecker/.) python healthChecker.py http://localhost:4000/api/time -i 5
 
 stream-health:
 	@docker logs $(HEALTH_ID) -f
