@@ -1,6 +1,6 @@
 # HealthChecker
 
-### Require Software
+### Required Software
 
 * Docker
 * Docker Compose
@@ -8,12 +8,12 @@
 ### The Apps in this Repo
 
 `Api/`
-* This is a very simple flask API that has one endpoint that returns Date and Time in ISO format
+* This is a very simple flask API that has one endpoint that returns Date and Time in ISO format.
 
 `healthChecker/`
 * This is a CLI tool that runs a health Check against a given URL, It returns success and failure info along with time to last byte.
 
-* The CLI help page can be accessed with the following Docker command from the healthCheckers folder
+* The CLI help page can be accessed with the following Docker command from the healthCheckers folder.
 
         docker run -it $(docker build -q .) python healthChecker.py --help
 
