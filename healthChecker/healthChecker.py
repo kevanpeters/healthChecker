@@ -39,8 +39,11 @@ class Check:
       """ Makes HealthCheck request """
       try:
         start = time.time()
-        requests.get(self.url, timeout=self.timeout)
-        logging.info(f"SUCCESS | {round(time.time() - start, 5)}")
+        r = requests.get(self.url, timeout=self.timeout)
+        if r.status_code == 200:
+          logging.info(f"SUCCESS | {round(time.time() - start, 5)}")
+        else:
+          logging.error("FAILED TO CONNECT")
       except requests.exceptions.ReadTimeout:
         logging.error("FAILED TO RESOLVE")
       except (requests.exceptions.ConnectionError, requests.exceptions.Timeout):
